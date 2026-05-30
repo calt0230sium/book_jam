@@ -1,0 +1,156 @@
+[gd_scene format=3 uid="uid://doqigjc4xx6v1"]
+
+[ext_resource type="Script" uid="uid://bpbhlpyk5tjyx" path="res://client.gd" id="1_vsqxe"]
+[ext_resource type="Texture2D" uid="uid://bi0p1amqlr3q7" path="res://icon.svg" id="2_vsqxe"]
+
+[sub_resource type="FontVariation" id="FontVariation_vsqxe"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1drpi"]
+resource_name = "DemandeTexte"
+font_size = 35
+font_color = Color(0, 0, 0, 1)
+outline_size = 4
+outline_color = Color(0.39215687, 0.39215687, 0.39215687, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vsqxe"]
+atlas = ExtResource("2_vsqxe")
+region = Rect2(0, 0, 42, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1drpi"]
+atlas = ExtResource("2_vsqxe")
+region = Rect2(42, 0, 42, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uohgo"]
+atlas = ExtResource("2_vsqxe")
+region = Rect2(84, 0, 42, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xr2rm"]
+atlas = ExtResource("2_vsqxe")
+region = Rect2(0, 32, 42, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yl1qg"]
+atlas = ExtResource("2_vsqxe")
+region = Rect2(42, 32, 42, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bk6gh"]
+atlas = ExtResource("2_vsqxe")
+region = Rect2(84, 32, 42, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a13fs"]
+atlas = ExtResource("2_vsqxe")
+region = Rect2(0, 64, 42, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0h5wy"]
+atlas = ExtResource("2_vsqxe")
+region = Rect2(42, 64, 42, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rh3bs"]
+atlas = ExtResource("2_vsqxe")
+region = Rect2(84, 64, 42, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mp42i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vsqxe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1drpi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uohgo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xr2rm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yl1qg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bk6gh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a13fs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0h5wy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rh3bs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mp42i"]
+atlas = ExtResource("2_vsqxe")
+region = Rect2(0, 96, 42, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nbmvs"]
+atlas = ExtResource("2_vsqxe")
+region = Rect2(42, 96, 42, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dmuvl"]
+atlas = ExtResource("2_vsqxe")
+region = Rect2(84, 96, 42, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7egu8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vsqxe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mp42i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nbmvs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dmuvl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Client" type="Node2D" unique_id=861438619]
+script = ExtResource("1_vsqxe")
+
+[node name="Demande" type="Label" parent="." unique_id=1024929772]
+offset_left = 449.0
+offset_top = 62.0
+offset_right = 1088.0
+offset_bottom = 434.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_vsqxe")
+text = " 					Blablablablabla"
+label_settings = SubResource("LabelSettings_1drpi")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+text_overrun_behavior = 6
+text_direction = 1
+
+[node name="FondTexte" type="AnimatedSprite2D" parent="Demande" unique_id=1779998262]
+show_behind_parent = true
+use_parent_material = true
+position = Vector2(342, 192)
+scale = Vector2(12.5, 11.25)
+sprite_frames = SubResource("SpriteFrames_mp42i")
+frame = 3
+frame_progress = 0.56947243
+
+[node name="TeteClient" type="AnimatedSprite2D" parent="." unique_id=1975244134]
+position = Vector2(247.5, 315.5)
+scale = Vector2(2.3203125, 3.8984375)
+sprite_frames = SubResource("SpriteFrames_7egu8")
