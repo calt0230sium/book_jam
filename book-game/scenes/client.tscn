@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://doqigjc4xx6v1"]
 
-[ext_resource type="Script" uid="uid://bpbhlpyk5tjyx" path="res://client.gd" id="1_vsqxe"]
+[ext_resource type="Script" uid="uid://bpbhlpyk5tjyx" path="res://scripts/client.gd" id="1_vsqxe"]
 [ext_resource type="Texture2D" uid="uid://bi0p1amqlr3q7" path="res://icon.svg" id="2_vsqxe"]
 
 [sub_resource type="FontVariation" id="FontVariation_vsqxe"]

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dthv248h000v5"]
+
+[ext_resource type="Script" uid="uid://50pmrdcos2cg" path="res://scripts/book_ref.gd" id="1_an3pt"]
+
+[node name="BookRef" type="Node" unique_id=1942383844]
+script = ExtResource("1_an3pt")
+_book_colors = Dictionary[String, Color]({
+"blue_book": Color(0.2899987, 0.5682169, 0.8639, 1),
+"red_book": Color(0.8644173, 0.24427521, 0.2208254, 1)
+})

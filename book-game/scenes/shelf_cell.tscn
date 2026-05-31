@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://be6bqpk7bs8wa"]
+
+[ext_resource type="Script" uid="uid://bva2kbaj3jacv" path="res://scripts/shelf_book.gd" id="1_q4h17"]
+[ext_resource type="Texture2D" uid="uid://bi0p1amqlr3q7" path="res://icon.svg" id="2_dflyc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q4h17"]
+size = Vector2(42, 134)
+
+[node name="ShelfCell" type="Node2D" unique_id=743744387]
+script = ExtResource("1_q4h17")
+
+[node name="ColorRect" type="Sprite2D" parent="." unique_id=399706787]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(2.3841858e-07, 3.695488e-06)
+scale = Vector2(0.328125, 1.046875)
+texture = ExtResource("2_dflyc")
+
+[node name="Texture" type="Sprite2D" parent="." unique_id=1076277578]
+visible = false
+scale = Vector2(0.28125, 1)
+texture = ExtResource("2_dflyc")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1151031402]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1046949157]
+shape = SubResource("RectangleShape2D_q4h17")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

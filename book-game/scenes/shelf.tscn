@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://coxlojgtwf0o8"]
+
+[ext_resource type="Texture2D" uid="uid://csm7k0gpyuypr" path="res://placeholders/shelf.png" id="1_eyi4x"]
+[ext_resource type="Script" uid="uid://d2b8oqy24i67c" path="res://scripts/shelf.gd" id="1_xj574"]
+[ext_resource type="PackedScene" uid="uid://be6bqpk7bs8wa" path="res://scenes/shelf_cell.tscn" id="3_00mi8"]
+
+[node name="Shelf" type="Node2D" unique_id=48355485]
+script = ExtResource("1_xj574")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1187629219]
+position = Vector2(1991.2344, 324.31253)
+scale = Vector2(2.2374568, 2.237457)
+texture = ExtResource("1_eyi4x")
+
+[node name="Cells" type="Node2D" parent="." unique_id=1134990177]
+
+[node name="ShelfCell2" parent="Cells" unique_id=743744387 instance=ExtResource("3_00mi8")]
+position = Vector2(108, 165)
+book_ident = "red_book"
+
+[node name="ShelfCell" parent="Cells" unique_id=335117123 instance=ExtResource("3_00mi8")]
+position = Vector2(44, 166)
+book_ident = "blue_book"
+
+[node name="ShelfCell3" parent="Cells" unique_id=47800154 instance=ExtResource("3_00mi8")]
+position = Vector2(42, 377)
