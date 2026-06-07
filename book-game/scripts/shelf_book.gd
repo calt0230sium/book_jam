@@ -34,7 +34,7 @@ func place_book(ident):
 	update_from_ident()
 
 
-func _on_area_2d_input_event(viewport, event, shape_idx):
+func _on_area_2d_input_event(_viewport, _event, _shape_idx):
 	if Input.is_action_just_released("left_click"):
 		if contains_book: try_to_take.emit(book_ident)
 		else: try_to_place.emit()
