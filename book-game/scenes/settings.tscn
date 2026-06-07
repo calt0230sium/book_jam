@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://cjl7r3tnrcggh"]
+
+[ext_resource type="Script" uid="uid://dedfb65fkwqrv" path="res://scripts/settings.gd" id="1_5p8wc"]
+[ext_resource type="Texture2D" uid="uid://byhb7bslw5fwr" path="res://placeholders/music_on.png" id="2_6wm04"]
+[ext_resource type="Texture2D" uid="uid://biy0lsb0k36tr" path="res://placeholders/music_off.png" id="3_es4n0"]
+[ext_resource type="Texture2D" uid="uid://mox6n2l2knwr" path="res://placeholders/sfx_on.png" id="3_f4mfi"]
+[ext_resource type="Texture2D" uid="uid://ct34itrfueys3" path="res://placeholders/sfx_off.png" id="5_gis3k"]
+
+[node name="Settings" type="Control" unique_id=1624592925]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5p8wc")
+music_button_on_texture = ExtResource("2_6wm04")
+music_button_off_texture = ExtResource("3_es4n0")
+sfx_button_on_texture = ExtResource("3_f4mfi")
+sfx_button_off_texture = ExtResource("5_gis3k")
+
+[node name="MusicButton" type="TextureRect" parent="." unique_id=975030914]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -110.0
+offset_top = 21.0
+offset_right = -10.0
+offset_bottom = 121.0
+grow_horizontal = 0
+texture = ExtResource("2_6wm04")
+expand_mode = 1
+
+[node name="SFXButton" type="TextureRect" parent="." unique_id=2119267439]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -108.0
+offset_top = 112.0
+offset_right = -8.0
+offset_bottom = 212.0
+grow_horizontal = 0
+texture = ExtResource("3_f4mfi")
+expand_mode = 1
+
+[connection signal="gui_input" from="MusicButton" to="." method="_on_music_button_gui_input"]
+[connection signal="gui_input" from="SFXButton" to="." method="_on_sfx_button_gui_input"]

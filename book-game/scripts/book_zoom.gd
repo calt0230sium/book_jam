@@ -31,10 +31,12 @@ func zoom_on_book(ident:String):
 	
 	# Make the book rise
 	book.position = book_start_position
+	book.rotation = Vector3(0, PI/2, 0)
 	var move_tween = create_tween()
 	move_tween.set_trans(book_move_trans)
 	move_tween.set_ease(Tween.EASE_OUT)
 	move_tween.tween_property(book, "position", book_target_position, MOVE_DURATION)
+	move_tween.tween_property(book, "rotation", Vector3.ZERO, MOVE_DURATION)
 
 
 func disable():
@@ -44,6 +46,7 @@ func disable():
 	var move_tween = create_tween()
 	move_tween.set_trans(book_move_trans)
 	move_tween.set_ease(Tween.EASE_IN)
+	move_tween.tween_property(book, "rotation", Vector3(0, PI/2, 0), MOVE_DURATION)
 	move_tween.tween_property(book, "position", book_start_position, MOVE_DURATION)
 	move_tween.tween_callback(hide)
 	

@@ -48,6 +48,7 @@ func _process(delta):
 func put_book_in_hand(book_ident:String):
 	if has_book_in_hand():
 		printerr("Cannot put book in non-empty hand")
+	SoundManager.play_sound("tour")
 	book_in_hand = book_ident
 	debug.text = book_ident
 	cursor.take_book(book_ident)

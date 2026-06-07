@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://b7353smqc5y4m"]
+
+[ext_resource type="Script" uid="uid://i4utywvsyx8n" path="res://scripts/sound_manager.gd" id="1_rupev"]
+[ext_resource type="AudioStream" uid="uid://cqdpkfy82dq2v" path="res://placeholders/tour13.mp3" id="2_p1llj"]
+[ext_resource type="AudioStream" uid="uid://dvqm53uvx7awi" path="res://placeholders/Monked.mp3" id="3_7h8s6"]
+
+[node name="SoundManager" type="Node" unique_id=1130605885]
+script = ExtResource("1_rupev")
+audio_streams = Dictionary[String, AudioStreamMP3]({
+"placeholder_music": ExtResource("3_7h8s6"),
+"tour": ExtResource("2_p1llj")
+})
