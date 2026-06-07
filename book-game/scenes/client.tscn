@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://doqigjc4xx6v1"]
 
-[ext_resource type="Script" uid="uid://bpbhlpyk5tjyx" path="res://scripts/client.gd" id="1_vsqxe"]
+[ext_resource type="Script" uid="uid://45uh61kelqjf" path="res://scripts/client.gd" id="1_r26j7"]
 [ext_resource type="Texture2D" uid="uid://bi0p1amqlr3q7" path="res://icon.svg" id="2_vsqxe"]
+[ext_resource type="Script" uid="uid://btpao0j8nj8ef" path="res://scripts/tete_client.gd" id="4_da3od"]
 
 [sub_resource type="FontVariation" id="FontVariation_vsqxe"]
 
@@ -49,6 +50,7 @@ atlas = ExtResource("2_vsqxe")
 region = Rect2(84, 64, 42, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mp42i"]
+resource_local_to_scene = true
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -88,42 +90,27 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mp42i"]
-atlas = ExtResource("2_vsqxe")
-region = Rect2(0, 96, 42, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nbmvs"]
-atlas = ExtResource("2_vsqxe")
-region = Rect2(42, 96, 42, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dmuvl"]
-atlas = ExtResource("2_vsqxe")
-region = Rect2(84, 96, 42, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_7egu8"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_4tr0r"]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_vsqxe")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mp42i")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nbmvs")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dmuvl")
 }],
+"loop": true,
+"name": &"animation",
+"speed": 5.0
+}, {
+"frames": [],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
-[node name="Client" type="Node2D" unique_id=861438619]
-script = ExtResource("1_vsqxe")
+[node name="Client" type="Node2D" unique_id=861438619 node_paths=PackedStringArray("listdemandes")]
+script = ExtResource("1_r26j7")
+listdemandes = ["demanderandom"]
 
-[node name="Demande" type="Label" parent="." unique_id=1024929772]
+[node name="DemandeText" type="Label" parent="." unique_id=1024929772]
 offset_left = 449.0
 offset_top = 62.0
 offset_right = 1088.0
@@ -141,16 +128,22 @@ autowrap_mode = 2
 text_overrun_behavior = 6
 text_direction = 1
 
-[node name="FondTexte" type="AnimatedSprite2D" parent="Demande" unique_id=1779998262]
+[node name="FondTexte" type="AnimatedSprite2D" parent="DemandeText" unique_id=1779998262]
 show_behind_parent = true
 use_parent_material = true
 position = Vector2(342, 192)
 scale = Vector2(12.5, 11.25)
 sprite_frames = SubResource("SpriteFrames_mp42i")
-frame = 3
-frame_progress = 0.56947243
+frame_progress = 0.5048785
 
 [node name="TeteClient" type="AnimatedSprite2D" parent="." unique_id=1975244134]
 position = Vector2(247.5, 315.5)
 scale = Vector2(2.3203125, 3.8984375)
-sprite_frames = SubResource("SpriteFrames_7egu8")
+sprite_frames = SubResource("SpriteFrames_4tr0r")
+animation = &"animation"
+autoplay = "animation"
+script = ExtResource("4_da3od")
+clienttexture = Dictionary[String, Texture]({
+"clientrandom": ExtResource("2_vsqxe")
+})
+client = "clientrandom"

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://8e3g6tuyhe7e"]
+
+[ext_resource type="Script" uid="uid://bpbhlpyk5tjyx" path="res://scripts/clients.gd" id="1_u128f"]
+[ext_resource type="PackedScene" uid="uid://doqigjc4xx6v1" path="res://scenes/client.tscn" id="2_e8118"]
+[ext_resource type="Script" uid="uid://bfaxqe1wo4147" path="res://scripts/demande.gd" id="3_r5hn6"]
+
+[node name="Clients" type="Node2D" unique_id=806241067 node_paths=PackedStringArray("clients")]
+script = ExtResource("1_u128f")
+clients = [NodePath("Client1")]
+
+[node name="Client1" parent="." unique_id=861438619 node_paths=PackedStringArray("listdemandes") instance=ExtResource("2_e8118")]
+listdemandes = [NodePath("Demande1"), NodePath("Demande2")]
+client = "clientrandom"
+
+[node name="Demande1" type="Node" parent="Client1" unique_id=1428006849]
+script = ExtResource("3_r5hn6")
+demande = "demande1"
+metadata/_custom_type_script = "uid://bfaxqe1wo4147"
+
+[node name="Demande2" type="Node" parent="Client1" unique_id=1490484466]
+script = ExtResource("3_r5hn6")
+demande = "demande2"
+metadata/_custom_type_script = "uid://bfaxqe1wo4147"

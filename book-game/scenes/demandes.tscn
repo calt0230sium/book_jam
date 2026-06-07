@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dvop22ovwjpce"]
+
+[ext_resource type="Script" uid="uid://bfaxqe1wo4147" path="res://scripts/demande.gd" id="1_v7to8"]
+
+[node name="Demandes" type="Node" unique_id=1081198084]
+script = ExtResource("1_v7to8")
+metadata/DemandeTexte = ""
